@@ -1,0 +1,212 @@
+Sprint,Bug ID,Bug Title,Who found,Platform,Functionality,How many times reproduced,Root Cause,Status,Priorities,Severity,Created Date,Changed Date,Time for solve
+222,7250,The exception error after deleting the Module from step while editing workflow,QA,AT Portal(dev),Workflow,1,,Closed,3 - Medium,3 - Medium,04.01.2023,24.01.2023,20
+222,7251,The exception error after creation of the custom fields,QA,AT Portal(dev),Custom fields,1,"the algorithm of the index generation",Closed,3 - Medium,3 - Medium,04.01.2023,20.01.2023,16
+222,7252,The success notification are displayed with duplicates,QA,AT Portal(dev),Settings,1,,Not reproduced,3 - Medium,3 - Medium,04.01.2023,10.01.2023,6
+221,7253,SFTP doesn't work for CentOS server,DevOps,OPS(dev),"""Save to package/storage"" stuff on OPS",1,,Closed,3 - Medium,3 - Medium,04.01.2023,10.01.2023,6
+223,7254,QC: Throw NoMatchException during Doc generation,Developer,OPS(dev),QC,1,wrong msi name,Closed,3 - Medium,3 - Medium,04.01.2023,06.02.2023,33
+221,7285,Echo Repackage doesn`t work,QA,AT Portal(dev),Echo,1,,To Do,3 - Medium,3 - Medium,12.01.2023,14.08.2023,214
+-,7286,Issue with Zone files - VMs,Customer(Internal),OPS(prod),VMs,1,,To Do,3 - Medium,3 - Medium,12.01.2023,16.01.2023,4
+222,7287,AXA DaaS. The email with credentials is not sent,QA,AXA vDaaS(dev),Create new user,1,,Closed,3 - Medium,3 - Medium,13.01.2023,24.01.2023,11
+222,7293,Fix type in email template,Developer,AT Portal(dev),Email,1,,Closed,3 - Medium,3 - Medium,13.01.2023,24.01.2023,11
+224,7303,"""Copy project"" does not work",Developer,AT Portal(prod),Copy Project,1,,Not reproduced,3 - Medium,3 - Medium,16.01.2023,06.03.2023,49
+222,7304,Deleting of the imported file doesn`t work,QA,AT Portal(dev),Import,1,"QA fault, was not tested this functionality.",Closed,3 - Medium,3 - Medium,16.01.2023,20.01.2023,4
+-,7306,The MSIName propertly isn`t filled on the Wrapper Generator,QA,AT Portal(dev),Wrapper Generator,1,,Not reproduced,3 - Medium,3 - Medium,17.01.2023,08.08.2023,203
+-,7307,Exception error while uploading/deleting of the Profile Avatar,QA,SSO,Avatar,1,,Not reproduced,3 - Medium,3 - Medium,17.01.2023,08.08.2023,203
+222,7313,Failed to login to the ToGo Agent,QA,AT Portal(dev),"ToGo, SCCM",1,default user data directory for Edge WebView2 is where the initiated application is installed,Closed,3 - Medium,3 - Medium,18.01.2023,24.01.2023,6
+222,7315,AT Portal. Can`t save Packaging - Factory Service settings,QA,AT Portal(dev),Settings,1,,Closed,3 - Medium,3 - Medium,18.01.2023,17.02.2023,30
+-,7318,No data in KPI stats,Customer(Internal),OPS(prod),KPI,1,,To Do,2 - High,3 - Medium,18.01.2023,08.03.2023,49
+-,7329,AT Portal. Packaging - FS settings dissappeared after switching between subsections,QA,AT Portal(dev),Settings,1,,To Do,3 - Medium,3 - Medium,23.01.2023,23.01.2023,0
+222,7332,The ToGo agent doesn`t delete source folder from the Virtual Machine,QA,AT Portal(dev),VM,1,,Closed,3 - Medium,3 - Medium,23.01.2023,24.01.2023,1
+222,7333,The HTTP error occured while uploading image to the User Guides,QA,AT Portal(dev),User Guides,1,removed 'sftpstoragetest2' storage account in the 'server-dev-westeurope' resource group.,Closed,3 - Medium,3 - Medium,23.01.2023,24.01.2023,1
+222,7336,ServiceNow connection with AT Portal failed,QA,AT Portal(dev),ServiceNow,1,The User Guide was miswritten.,Not reproduced,3 - Medium,3 - Medium,23.01.2023,24.01.2023,1
+-,7346,VMs - Show hidden files in Total Commander,Customer(Internal),OPS(prod),VM,1,,To Do,3 - Medium,3 - Medium,24.01.2023,24.01.2023,0
+-,7349,OPS. typo in Shifts tab,QA,OPS(dev),Wording,1,,To Do,4 - Low,4 - Low,24.01.2023,02.02.2023,9
+-,7350,OPS. 404 Error while finding substitues,QA,OPS(prod),Support,1,,To Do,3 - Medium,3 - Medium,25.01.2023,02.02.2023,8
+-,7360,OPS. Invalid downloaded .zip archive of invoices,QA,OPS(dev),Invoice Collector,1,,To Do,4 - Low,3 - Medium,25.01.2023,03.02.2023,9
+-,7361,OPS. 500 error while trying to print accounting report,QA,OPS(dev),Accounting ,1,,To Do,4 - Low,3 - Medium,25.01.2023,03.02.2023,9
+-,7365,OPS. Bugs Month statistics are not grouped,QA,OPS(prod),KPI ,1,,To Do,3 - Medium,3 - Medium,26.01.2023,08.02.2023,13
+-,7366,OPS. Typo in Internal/Bugs edit forms,QA,OPS(prod),KPI ,1,,To Do,4 - Low,3 - Medium,26.01.2023,03.02.2023,8
+-,7367,OPS: InvoiceCollectionJob.Collect fails,Developer,OPS(dev),Invoice Collector,1,,To Do,3 - Medium,3 - Medium,26.01.2023,02.02.2023,7
+223,7369,VM stuck at 'Created' status,Developer,AT Portal(dev),Import,1,Intune Push problem,Closed,2 - High,3 - Medium,26.01.2023,07.02.2023,12
+223,7370,AT portal. Intune push isn`t working,QA,AT Portal(dev),IntunePush,1,,Closed,3 - Medium,3 - Medium,26.01.2023,17.02.2023,22
+-,7377,OPS. SendGrid is not available on development environment,QA,OPS(prod),Mailer,1,,To Do,3 - Medium,3 - Medium,30.01.2023,30.01.2023,0
+227,7398,EDEKA Windows 10 Pro x64 DE (21H2) - some applications are missing in #tools,Customer(Internal),OPS(prod),VM,1,,Closed,3 - Medium,3 - Medium,31.01.2023,21.03.2023,49
+-,7401,OPS: Wrong WG reference for AAP project from DevOPS Area,Customer(Internal),OPS(prod),DevOPS area,1,,To Do,3 - Medium,3 - Medium,01.02.2023,01.02.2023,0
+-,7417,Remove file in folder on Apptimized storage redirects to root directory,Customer(Internal),AT Portal(prod),Storage,1,,To Do,3 - Medium,3 - Medium,01.02.2023,24.02.2023,23
+223,7427,UM AutoRequest false creating,Customer,AT Portal(dev),UM,1,,Closed,3 - Medium,3 - Medium,02.02.2023,17.02.2023,15
+224,7439,OPS: TT Total field miscalculation,Managment,OPS(prod),Time Tracker,1,"KpiTrackerCollectionJob.ObtainBugfixes' ran at 0:00 on 23.12.2022, it created the 'project package' record in the OPS database but it did not take into account the time tracker records logged by the packager and set the 'packaging time' to 0 hours",Closed,3 - Medium,3 - Medium,06.02.2023,21.02.2023,15
+224,7440,AAP Windows 10 x64 EN (22H2) - script Execution policy was not configurated,Customer(Internal),OPS(prod),VM,1,,Closed,3 - Medium,3 - Medium,06.02.2023,28.02.2023,22
+-,7443,APE WG: file encoding should not change after replacement.,Customer(Internal),AT Portal(prod),Wrapper Generator,1,,To Do,3 - Medium,3 - Medium,06.02.2023,08.02.2023,2
+-,7448,AAP Windows Server x64 EN 2019 - issues,Customer(Internal),OPS(prod),VM,1,,Closed,3 - Medium,3 - Medium,06.02.2023,15.02.2023,9
+-,7453,OPS AppDB. KnowHow edit submit error,QA,OPS(dev),AppDB,1,,Closed,3 - Medium,3 - Medium,07.02.2023,07.02.2023,0
+-,7468,Account avatar is not shown at AT,Customer(Internal),AT Portal(prod),Avatar,1,,To Do,3 - Medium,3 - Medium,10.02.2023,10.02.2023,0
+-,7473,OPS: Fix Chrome autopackaging,Developer,OPS(prod),Autopackaging,1,"MST autopackaging format means repackaged MSI, it is not processed by job for now",To Do,3 - Medium,3 - Medium,13.02.2023,13.02.2023,0
+-,7474,Quality Checker: Failing during package validation.,Customer(Internal),OPS(prod),QC,1,,To Do,3 - Medium,3 - Medium,13.02.2023,10.03.2023,25
+,7475,OPS. Emails are not sent,QA,"OPS(dev), OPS(prod)",Email,1,,Closed,3 - Medium,3 - Medium,13.02.2023,14.02.2023,1
+-,7483,A duplicate user at AT portal,Customer(Internal),SSO,User,2,,Removed,2 - High,3 - Medium,14.02.2023,15.06.2023,121
+226,7508,Virtualization issue with PrepareVmStorage,Developer,AT Portal(dev),VM,1,PrepareVMStorage job is stuck if file does not exist at storage but exists in DB,Closed,2 - High,2 - High,16.02.2023,21.03.2023,33
+234,7510,Delete Workflow problem,Developer,AT Portal(prod),Workflow deletion,1,,Closed,3 - Medium,3 - Medium,16.02.2023,21.07.2023,155
+-,7527,AT Portal vs. SSO Email whitelabeling,Customer(Internal),AT Portal(prod),Whitelabeling,1,,Closed,3 - Medium,2 - High,21.02.2023,07.03.2023,14
+-,7531,The 404 error is shown after the Terminating of the VM when switching from one snapshot to another,QA,OPS(dev),VM,1,,To Do,3 - Medium,3 - Medium,21.02.2023,07.03.2023,14
+-,7533,On OPS portal RDP file can be downloaded with a 10 seconds delay,Customer(Internal),OPS(prod),VM,1,,Not reproduced,3 - Medium,3 - Medium,22.02.2023,13.03.2023,19
+225,7543,After updating secret for reading Storage Key from Key Vault the OPS DEV stopped working,Developer,OPS(dev),OPS main page,1,k8s_Dev' folder with the 'deployment.yaml' file for the SSO Api existed in the 2 places,Closed,3 - Medium,3 - Medium,22.02.2023,01.03.2023,7
+234,7613,"""AppID"", ""Reference"", ""Previous version"" and ""Prerequisites"" fields not addressable",Customer(Internal),AT Portal(prod),AT Portal,1,,Closed,2 - High,3 - Medium,27.02.2023,22.07.2023,145
+226,7663,AT Portal vs. SSO Email whitelabeling. Portal part.,Managment,AT Portal(dev),Notifications,1,unneeded types of emails in enum,Closed,3 - Medium,2 - High,01.03.2023,21.03.2023,20
+-,7678,"Timeline shows completed discovery as ""uncompleted""",Managment,AT Portal(prod),Timeline,1,,To Do,3 - Medium,3 - Medium,01.03.2023,01.03.2023,0
+226,7694,Error notification is shown on the Portal after the cancellation of the Discovery FS ticket,QA,AT Portal(prod),Factory Requests,1,the URL in the SDC project is not https://app.apptimized.com/Workflow/Api/Jira but something different,Closed,3 - Medium,3 - Medium,02.03.2023,21.03.2023,19
+225,7768,An autopackaged package is generated without empty folders.,Customer(Internal),OPS(prod),Autopackaging,1,QA fault,Closed,3 - Medium,3 - Medium,06.03.2023,05.05.2023,60
+226,7774,KNAUF Windows 10 x64 EN (1909) - default PSADT dot sourcing,Customer(Internal),Virtualization,VDI image,1,,Closed,2 - High,3 - Medium,07.03.2023,20.03.2023,13
+232,7787,No Project Storage access for non-entitled users,Managment,AT Portal(prod),Share mount,1,,Closed,2 - High,3 - Medium,10.03.2023,15.07.2023,127
+-,7830,"AT portal. ""This User Guide is not available"" error notification",QA,AT Portal(dev),User Guides,1,,To Do,3 - Medium,3 - Medium,14.03.2023,14.03.2023,0
+226,7832,Any user can access any user data and organization data,Developer,"SSO, AT Portal",API,1,API endpoints are not secure we need to add a check for permissions for API endpoints. ,Closed,2 - High,1 - Critical,14.03.2023,21.03.2023,7
+-,7848,Very slow performance of the AppDb 'Edit software',Developer,OPS(dev),AppDB,1,,To Do,3 - Medium,3 - Medium,17.03.2023,20.03.2023,3
+-,7849,Issue with the limit of 200 items to return from Azure DevOps service,Developer,OPS(dev),Azure DevOPS,1,,To Do,3 - Medium,3 - Medium,17.03.2023,17.03.2023,0
+227,7853,VirusCheck Service pod is not started automatically after deployment,Developer,AT Portal(dev),VirusCheck,1,,Closed,3 - Medium,3 - Medium,17.03.2023,21.03.2023,4
+-,7855,Very slow performance of the Default Complexity Matrix 'Test',Developer,OPS(dev),Complexity Matrix,1,,To Do,3 - Medium,3 - Medium,17.03.2023,20.03.2023,3
+-,7856,Fix license issue for TinyMCE js package,Developer,AT Portal(dev),Licence,1,,Not reproduced,3 - Medium,3 - Medium,19.03.2023,23.03.2023,4
+-,7857,The mail is not sent using Mailer on OPS,QA,OPS(dev),Mailer,1,,To Do,3 - Medium,3 - Medium,20.03.2023,05.04.2023,16
+-,7859,Very slow performance of the Template Generator Run,Developer,OPS(dev),Autopackaging,1,,To Do,3 - Medium,3 - Medium,20.03.2023,20.03.2023,0
+-,7875,EDEKA Windows 10 Pro x64 DE (21H2) - default PSADT dot sourcing,Customer(Internal),AT Portal(dev),VDI image,1,,Closed,2 - High,3 - Medium,21.03.2023,17.07.2023,118
+227,7891,SDC ticket is not transitioned to 'Info Validation' status after added comment,Developer,AT Portal(dev),Factory Requests,1,,Closed,1 - Critical,1 - Critical,22.03.2023,25.03.2023,3
+227,7910,Apptimized AV scan produces an error: 'Not connected to the AV engine',Customer,AT Portal(dev),AV file check,1,,Closed,2 - High,2 - High,22.03.2023,22.07.2023,122
+230,8034,"VM is getting stuck during ""msiexec"" cmd commands",Customer(Internal),AT Portal(dev),VM,1,,Closed,2 - High,3 - Medium,31.03.2023,03.06.2023,64
+-,8106,Launcher doesn't handle all user custom settings,Customer(Internal),AT Portal(prod),Launcher,1,,Closed,3 - Medium,3 - Medium,10.04.2023,11.07.2023,92
+-,8107,PSADT Wrapper. MSI list of package is not displayed,QA,AT Portal(prod),Wrapper Generator,1,,To Do,3 - Medium,3 - Medium,10.04.2023,10.04.2023,0
+228,8122,Node golf. Problem with permission during creating new folders.,DevOps,Virtualization,VM,1,,Closed,3 - Medium,3 - Medium,11.04.2023,11.04.2023,0
+228,8127,AT portal. Source Status is set to zero after OPS UM Crawl,QA,AT Portal(dev),Source status,1,,Closed,3 - Medium,3 - Medium,12.04.2023,20.04.2023,8
+235,8128,User duplication AT - SSO,Managment,AT Portal(prod),List of users,1,users deleted in SSO where not deleted in AT portal's own user DB,Closed,2 - High,2 - High,12.04.2023,09.08.2023,119
+-,8130,AT portal. Authorization failed after login without and with added subscription,QA,SSO(dev),Authorization ,1,,To Do,3 - Medium,3 - Medium,12.04.2023,12.04.2023,0
+228,8155,The Upload Discovery Document button isn`t working on the Care+ settings,QA,AT Portal(dev),Care: Upload Discovery File,1,,Closed,3 - Medium,3 - Medium,18.04.2023,19.04.2023,1
+228,8160,OPS migration. Fixing issues,DevOps,OPS(dev),DB,1,,Closed,3 - Medium,3 - Medium,19.04.2023,19.04.2023,0
+228,8161,Issue with VPN server,DevOps,VPN,RDP,1,,Closed,3 - Medium,3 - Medium,19.04.2023,19.04.2023,0
+-,8163,AT portal UM. Application is marked as Care+ but is empty,QA,AT Portal(dev),Updates,1,,To Do,3 - Medium,3 - Medium,19.04.2023,19.04.2023,0
+-,8193,AT portal. Screenshotter not capturing button clicks,QA,AT Portal(dev),Screenshoter,1,,To Do,2 - High,3 - Medium,21.04.2023,25.07.2023,95
+230,8195,Autopackaging: uzip source archive put files outside of initial folders,Customer(Internal),OPS(dev),Autopackaging,1,Replaced backslashes in entries for uploading to storage,Closed,3 - Medium,3 - Medium,21.04.2023,18.05.2023,27
+229,8197,The Link to image is shown in the top of the page on the Preview Discovery Document,QA,AT Portal(dev),Discovery Document Preview,1,,Closed,3 - Medium,3 - Medium,21.04.2023,03.07.2023,73
+229,8217,AutoPackaging: run creation of VM instance directly from 'AutoTestingJob',Developer,OPS(dev),Autopackaging Testing,1,,Closed,2 - High,2 - High,25.04.2023,17.05.2023,22
+229,8219,Fix folder structure in the IntuneWin zip-archive,Developer,OPS(dev),Autopackaging Wrapping,1,"Wrong requirements for the task, QA fault",Closed,2 - High,3 - Medium,26.04.2023,03.07.2023,68
+229,8236,The empty replace item is replaced by placeholder,QA,OPS(dev),Autopackaging Wrapping,1,,Not reproduced,2 - High,3 - Medium,28.04.2023,03.07.2023,66
+229,8240,Care ticket exist on version logic doesn`t left link to the existing Care parent SDC,QA,AT Portal(dev),Autopackaging Restart,1,,Closed,3 - Medium,3 - Medium,02.05.2023,03.07.2023,62
+229,8241,"CAT ticket created not properly, if no Care and package file is available on the Apptimized Portal backend -",QA,AT Portal(dev),Autopackaging Restart,1,,Closed,3 - Medium,3 - Medium,02.05.2023,03.07.2023,62
+230,8247,User shown twice in send notification field ,Managment,AT Portal(dev),Care,1,,Closed,2 - High,3 - Medium,03.05.2023,17.05.2023,14
+233,8258,Autopackaging can not be performed if the source file size is bigger 2gb,Customer(Internal),OPS(prod),Autopackaging,1, buffer size is 2gb,Closed,3 - Medium,3 - Medium,03.05.2023,21.07.2023,79
+230,8261,AAP Windows 11 x64 EN (22H2) - auto-update enabled,Customer(Internal),AT Portal(dev),VDI image,1,,Closed,3 - Medium,3 - Medium,03.05.2023,24.05.2023,21
+-,8276,"AT Portal Intune. 500 error is ""Access to All apps"" permission is not enabled",QA,AT Portal(dev),Intune,1,,To Do,3 - Medium,3 - Medium,04.05.2023,04.05.2023,0
+231,8295,AT portal UM. Editing application version will increase release time,QA,AT Portal(dev),UM,1,,Closed,3 - Medium,3 - Medium,10.05.2023,17.06.2023,38
+-,8296,"After the wrapper generation umlauts were replaced with ""?"". LGH project.",Customer(Internal),OPS(prod),Package Template,1,,To Do,3 - Medium,3 - Medium,10.05.2023,25.07.2023,76
+230,8304,The Assignee field is not saved during the editing of the Autopackaging template,QA,OPS(dev),Autopackaging template,1,,Closed,3 - Medium,3 - Medium,12.05.2023,03.07.2023,52
+-,8307,PWCGCI Windows 10 x64 EN (21H1) Office PWC - Office can't be activated,Customer(Internal),OPS(prod),VDI image,1,,To Do,3 - Medium,3 - Medium,12.05.2023,04.08.2023,84
+237,8326,Remove unneeded TenantUser DB entity from AT portal,Developer,SSO(dev),Organization,1,,Closed,2 - High,3 - Medium,17.05.2023,27.06.2023,41
+-,8364,AAP Windows 11 x64 EN (22H2) - issues,Customer(Internal),OPS(prod),VDI image,1,,To Do,3 - Medium,3 - Medium,18.05.2023,19.05.2023,1
+231,8367,OPS: Roboboss can't retrieve assignee field,Developer,OPS(prod),Roboboss,1,,Closed,1 - Critical,1 - Critical,18.05.2023,30.05.2023,12
+231,8369,Care+ problems with technologies and platforms,Developer,AT Portal(prod),Care+,1, different ids for Packaging technology in different SDC project,Closed,3 - Medium,3 - Medium,18.05.2023,08.07.2023,51
+231,8373,Source status gap,Developer,OPS(dev),Crawler,1,,Closed,3 - Medium,3 - Medium,19.05.2023,19.05.2023,0
+-,8382,SafeBox doesn't work,DevOps,SafeBox,Authorization ,1,,Closed,3 - Medium,3 - Medium,19.05.2023,19.05.2023,0
+-,8386,The Copy project doesn't work on the Administration -> Projects,QA,AT Portal(dev),Project,1,,To Do,1 - Critical,1 - Critical,19.05.2023,23.05.2023,4
+231,8391,Fix error 'Could not create a VM for testing' because of DbContext,Developer,OPS(prod),Autopackaging Testing,2,,Closed,1 - Critical,2 - High,19.05.2023,23.05.2023,4
+231,8410,Fix incorrect usage of DbContext async methods,Developer,OPS(prod),Autopackaging Testing,1,_autopackagingTemplateService.GetAutopackagingTemplateById' is not asynchronous,Closed,3 - Medium,3 - Medium,22.05.2023,23.05.2023,1
+-,8426,AAP [Caverion]Windows 10 x64 EN (1909) - MS Edge is outdated,Customer(Internal),OPS(prod),VM,1,not updated MS Edge application,To Do,1 - Critical,2 - High,23.05.2023,23.05.2023,0
+231,8429,Sometimes VMs are not created,Customer(Internal),OPS(prod),Autopackaging Testing,1,,Closed,3 - Medium,3 - Medium,23.05.2023,24.05.2023,1
+-,8431,EDEKA Windows 10 Pro x64 DE (21H2) - default PSADT dot sourcing,Customer(Internal),OPS(prod),VM,1,,Closed,3 - Medium,3 - Medium,23.05.2023,17.07.2023,55
+-,8434,"AutoPackagerJob does not replace value of 'PackagePath', 'CustomExitCodes' in SDC ticket description",Developer,OPS(dev),AutoPackagerJob,1,,To Do,3 - Medium,3 - Medium,23.05.2023,27.06.2023,35
+231,8435,Autopackaging restart jobs,Customer(Internal),OPS(prod),Autopackaging Restart,1,,Closed,3 - Medium,3 - Medium,24.05.2023,26.05.2023,2
+-,8440,Filtering options are not fully shown - Telerik table,Developer,AT Portal(prod),Filtering,1,,To Do,3 - Medium,3 - Medium,24.05.2023,27.07.2023,64
+231,8441,Set ValidateOnlySpecifiedFiles by default for all packageType,Customer(Internal),OPS(dev),QC,1,,Closed,2 - High,1 - Critical,24.05.2023,03.07.2023,40
+232,8443,Agent on VM slowing down machine / keyboard input,Managment,AT Portal(prod),To Go Agent,1,,Closed,3 - Medium,3 - Medium,24.05.2023,14.06.2023,21
+-,8444,Disco / Testing module: screenshotter button unaware of Agent state,Managment,AT Portal(prod),Screenshoter,1,,To Do,3 - Medium,3 - Medium,24.05.2023,24.05.2023,0
+231,8453,"""?"" missed after the confirmation of certain application untrack",QA,AT Portal(dev),UM,1,wording symbol missed,Closed,1 - Critical,3 - Medium,25.05.2023,30.05.2023,5
+231,8454,Pivot Table creation is going to loop in the Updates page.,Customer(Internal),AT Portal(prod),UM,1,QA fault.,Closed,3 - Medium,3 - Medium,25.05.2023,30.05.2023,5
+231,8459,Add -i switch for PsExec arguments in OPS Agent,Customer(Internal),AT Portal(dev),Autopackaging Testing,1,,Closed,3 - Medium,3 - Medium,26.05.2023,03.07.2023,38
+231,8464,Updates page. Care enabled by default for application with disabled Autopackaging,QA,AT Portal(dev),UM,1,,Closed,3 - Medium,3 - Medium,26.05.2023,03.07.2023,38
+-,8470,Zip template file isn`t uploaded to Packaging Wrapper,QA,OPS(dev),Wrapper Generator,1,,To Do,2 - High,2 - High,29.05.2023,29.05.2023,0
+-,8475,Set Demo SCCM settings not working,QA,AT Portal(dev),SCCM,1,,Closed,3 - Medium,3 - Medium,30.05.2023,01.06.2023,2
+-,8478,Duplicate issue was created,Developer,AT Portal(prod),JIRA,1,,To Do,3 - Medium,3 - Medium,30.05.2023,03.07.2023,34
+231,8479,Autopackager notifies UM team for non-existing UMid,Customer(Internal),OPS(prod),Autopackaging Notifications,1,,Closed,3 - Medium,3 - Medium,30.05.2023,03.07.2023,34
+232,8481,AT Portal SCCM push. 500 error while trying to push app without package,QA,AT Portal(dev),SCCM push,1,,Closed,3 - Medium,3 - Medium,30.05.2023,08.07.2023,39
+-,8484,Default discovery document field buttons are out of the modal window if the name of the discovery documentation is very long,QA,AT Portal(dev),Updates,1,,To Do,2 - High,2 - High,31.05.2023,31.05.2023,0
+231,8485,The Package are not available for this version label is not displayed on the Versions page,QA,AT Portal(prod),UM,1,,Closed,2 - High,2 - High,31.05.2023,14.06.2023,14
+232,8494,OPS: fix memory leak in adding sources to package,Developer,OPS(dev),Autopackaging 'Packaging' step,1,,Closed,3 - Medium,2 - High,01.06.2023,06.06.2023,5
+234,8497,OPS: fix incorrect 'skipFirstLevel' logic in 'AutoPackagingTemplateService.AddSourcesToPackage',Developer,OPS(prod),Autopackaging,1,uncertainty and a bug in the logic of copying files from the application source archive to the resulted package archive,Closed,2 - High,2 - High,02.06.2023,12.07.2023,40
+232,8503,QC: unable to validate package because of no space on the disk,Developer,OPS(dev),QC,1,temporary AssistedDatabase for the MST is not deleted after the processing because the 'PackageInfo.Dispose' method does not call the 'RemoveTransform()' for each dataContext AssistedDatabase.,Closed,2 - High,3 - Medium,02.06.2023,19.06.2023,17
+235,8518,VirusCheck Service reports incorrect error while processing big files,Managment,AT Portal(prod),AV file check,1,ClaimID limits,Closed,3 - Medium,3 - Medium,08.06.2023,12.08.2023,65
+232,8519,AT Portal Intune. Push with several detection scripts will lead to 500 error,QA,AT Portal(dev),IntunePush,1,QA fault.,Closed,3 - Medium,3 - Medium,08.06.2023,14.06.2023,6
+232,8532,The empty space of the Main Content has a black color if the Side Menu has a huge number of projects,QA,AT Portal(dev),AT Portal,1,Developers mistake during separation loading of main content and menu,Closed,3 - Medium,3 - Medium,13.06.2023,14.06.2023,1
+233,8548,QC: EDEKA prefix conflicts with Cost center,Developer,OPS(prod),QC,1,"Because of packageRootSubstring.StartsWith(vm.ProjectPathPrefix"") and prefix is not added",Closed,3 - Medium,3 - Medium,15.06.2023,21.07.2023,36
+233,8549,SCCM Connector: Push as Package 500 error,Customer(Internal),AT Portal(prod),SCCM push,1,,Closed,3 - Medium,3 - Medium,15.06.2023,15.07.2023,30
+-,8553,"The ""?"" symbol isn`t displayed on the confirmation modal window of Updates page",QA,AT Portal(dev),Updates,1,,To Do,3 - Medium,3 - Medium,16.06.2023,16.06.2023,0
+233,8555,SCCM Connector: Push as Package Deployment fail,Customer(Internal),AT Portal(prod),SCCM push,1,,Closed,3 - Medium,3 - Medium,16.06.2023,21.07.2023,35
+-,8561,OPS: Reanimate parameters placeholders,Developer,OPS(prod),Autopackaging,1,,To Do,2 - High,3 - Medium,16.06.2023,22.06.2023,6
+235,8562,Care. Can not disable Care notifications,Managment,AT Portal(prod),Notifications,1,,Closed,2 - High,3 - Medium,17.06.2023,09.08.2023,53
+-,8589,OPS: sometimes connection to SDC fails,Developer,OPS(prod),Autopackaging,1,,To Do,3 - Medium,3 - Medium,22.06.2023,23.06.2023,1
+-,8601,AT Portal. Big Filesize logo is not uploaded,QA,"AT Portal(prod), AT Portal(dev)",Avatar,1,,To Do,2 - High,3 - Medium,26.06.2023,30.06.2023,4
+235,8613,"Custom fields, Select type, display vs. value - Disco/Testing document",Managment,AT Portal(prod),Custom fields,1,,Closed,2 - High,3 - Medium,28.06.2023,12.08.2023,45
+-,8614,AT: Available tips for custom fields on Import step,Developer,AT Portal(prod),Custom fields,1,,Closed,3 - Medium,3 - Medium,28.06.2023,23.08.2023,56
+-,8616,An error occurred while creating Disco Document file if the Document file name pattern consist of custom fields with long length value,QA,AT Portal(dev),Discovery SS,1,,To Do,3 - Medium,3 - Medium,29.06.2023,29.06.2023,0
+-,8619,The error occured while creation of wrapper template,QA,AT Portal(dev),Wrapper Generator,1,,To Do,2 - High,3 - Medium,29.06.2023,06.07.2023,7
+-,8631,Freshchat unread message counter fix in widget bubble,Customer,AT Portal(prod),Freshchat,1,,To Do,2 - High,3 - Medium,29.06.2023,26.07.2023,27
+238,8632,APE. App-V Gridmetric library error,QA,AT Portal(prod),APE,1,,Closed,3 - Medium,3 - Medium,30.06.2023,06.09.2023,68
+235,8640,"Double creation of revision increment after multiply pressing ""Restart"" button",QA,OPS(dev),Autopackaging Restart,1,no check for this case,Closed,2 - High,3 - Medium,30.06.2023,26.07.2023,26
+235,8642,Timetravel in Timeline,Managment,AT Portal(prod),Timeline,1,,Closed,2 - High,3 - Medium,30.06.2023,09.08.2023,40
+237,8644,AT Portal. Deployment type is not showed after switching,QA,AT Portal(prod),SCCM,1,,Closed,2 - High,2 - High,03.07.2023,23.08.2023,51
+234,8645,OPS: auto packager cannot create a package from source zip archive,Developer,OPS(prod),Autopackaging,1, invalid extraction JS script,Closed,3 - Medium,3 - Medium,03.07.2023,05.07.2023,2
+-,8692,Handle TransitionToReadyForTesting result,Developer,OPS(prod),Autopackaging,1,,To Do,3 - Medium,3 - Medium,05.07.2023,05.07.2023,0
+-,8695,The RDP doesn`t start at AT Portal VM,QA,AT Portal(dev),RDP,1,,To Do,3 - Medium,3 - Medium,05.07.2023,06.07.2023,1
+-,8697,The Push to remote clipboard isn`t working on the Discovery SS step,QA,AT Portal(dev),Virtualization,1,,To Do,3 - Medium,3 - Medium,05.07.2023,06.07.2023,1
+-,8698,"The Settings (TimeZone, Date Format, Time Format, Start day of week) isn`t worked properly on SSO Passport",QA,SSO Passport(dev),Settings,1,,Not reproduced,2 - High,3 - Medium,05.07.2023,06.07.2023,1
+237,8702,AT Portal. Telerik table date filtering is not working,QA,AT Portal(prod),Table,1,,Closed,3 - Medium,3 - Medium,06.07.2023,25.08.2023,50
+-,8708,The Time Format isn`t properly displayed while changing Settings on the SSO Passport,QA,SSO Passport(dev),Settings,1,,To Do,3 - Medium,3 - Medium,06.07.2023,06.07.2023,0
+-,8715,Delete mapping from Documentation links,QA,AT Portal(dev),Documentation,1,,To Do,3 - Medium,3 - Medium,07.07.2023,07.07.2023,0
+-,8741,The Download step can`t be disabled using SKU or Roles ,QA,AT Portal(dev),Download,1,,To Do,2 - High,3 - Medium,11.07.2023,11.07.2023,0
+235,8746,"""load directly to intenet""",Managment,AT Portal(prod),Wording,1,deleted Translation Service during performance improvment,Closed,2 - High,3 - Medium,12.07.2023,09.08.2023,28
+236,8753,Filtering for project bug,Customer(Internal),AT Portal(prod),Filtering,1,Developers mistake during separation loading of main content and menu,To Do,2 - High,2 - High,13.07.2023,12.08.2023,30
+238,8756,Portal and jira comments sync problem,Customer(Internal),AT Portal(prod),Factory Requests,1,,Closed,2 - High,3 - Medium,13.07.2023,04.09.2023,53
+238,8758,All VMs - default PSADT dot sourcing and related tool,Customer(Internal),OPS(prod),VM,1,,Closed,,,14.07.2023,29.08.2023,46
+-,8763,Net drives aren't available in admin mode,Customer(Internal),OPS(prod),VM,1,,To Do,3 - Medium,3 - Medium,14.07.2023,25.07.2023,11
+235,8770,OPS: Fix active VM counter while creating new VM,Developer,OPS(prod),VM,1, some records in VirtualizationRemoteInstances table where RemoteInstanceId is NULL,Closed,2 - High,3 - Medium,18.07.2023,09.08.2023,22
+237,8774,"Custom fields, Select type, display vs. value - Project Settings",Developer,AT Portal(prod),Wording,1,,Closed,2 - High,3 - Medium,19.07.2023,25.08.2023,37
+236,8778,Catalogue autopackaging: Fix Intunewin package zip archive structure,Customer(Internal),OPS(prod),Autopackaging Wrapping,1,QA fault.,Closed,1 - Critical,3 - Medium,19.07.2023,09.08.2023,21
+-,8781,"AT Portal Discovery. 500 error while saving discovery document with custom field with type ""select""",QA,"AT Portal(prod), AT Portal(dev)",Custom fields,1,,Closed,2 - High,3 - Medium,20.07.2023,27.07.2023,7
+237,8782,KNAUF Windows 10 x64 EN (1909) - Copy/Paste from outer sources is not working in SystemCMD,Customer(Internal),OPS(prod),VM,1,,Closed,3 - Medium,3 - Medium,20.07.2023,28.08.2023,39
+-,8785,From and Till input date fields are executed the dates from DB using UTC time zone,QA,OPS(dev),Audit,1,,To Do,2 - High,3 - Medium,21.07.2023,21.07.2023,0
+-,8788,"""Discovery — Self Service - Screenshots"" is not completed in timeline, but actually is",Managment,AT Portal(prod),Timeline,1,,To Do,2 - High,3 - Medium,24.07.2023,24.07.2023,0
+236,8792,VPN connection issue,DevOps,VPN,Connection,1,,Closed,3 - Medium,3 - Medium,25.07.2023,31.07.2023,6
+236,8793,PWC customer can't copy an application request,Customer,AT Portal(prod),Copy Application,1,,Closed,3 - Medium,3 - Medium,26.07.2023,09.08.2023,14
+-,8804,Catalogue. Notifications are sent even if disabled,Managment,AT Portal(prod),Notifications,1,,To Do,2 - High,3 - Medium,26.07.2023,26.07.2023,0
+236,8828,Error while processing Factory request,Developer,AT Portal(prod),Factory Requests,1,,Closed,1 - Critical,3 - Medium,31.07.2023,09.08.2023,9
+-,8835,AT: Version from tag sorting,Developer,AT Portal(prod),Tag,1,,Removed,3 - Medium,3 - Medium,31.07.2023,01.08.2023,1
+-,8839,Nuget package is expired,Developer,"AT Portal(prod), AT Portal(dev)",Updates,1,,Closed,1 - Critical,3 - Medium,02.08.2023,12.08.2023,10
+238,8840,Rewrite code that uses trial nuget access,Developer,"AT Portal(prod), AT Portal(dev)",Updates,1,,Closed,2 - High,3 - Medium,02.08.2023,01.09.2023,30
+238,8843,Ugly Information block for Images with  multy-line comments,DevOps,Virtualization Admin,VM,1,,Closed,2 - High,3 - Medium,02.08.2023,06.09.2023,35
+236,8846,The top order changed from Previous -> In Portfolio to In Portfolio -> Previous after selecting Previous version,QA,AT Portal(dev),Import,1,,Closed,3 - Medium,3 - Medium,02.08.2023,09.08.2023,7
+-,8848,Discovery. Can`t process Factory Service if two project ID is present to previous version,QA,AT Portal(dev),Factory Requests,1,,To Do,3 - Medium,3 - Medium,04.08.2023,04.08.2023,0
+-,8850,KPI: Fix Feedback categories grouping,Customer(Internal),OPS(prod),KPI,1,,To Do,3 - Medium,3 - Medium,04.08.2023,04.08.2023,0
+-,8859,AT Portal. Fix Telerik table time filtering like in the Catalogue page,QA,"AT Portal(prod), AT Portal(dev)",Table,1,,To Do,3 - Medium,3 - Medium,09.08.2023,09.08.2023,0
+-,8880,Error while obtaining filter options for Import type column in Import History,Developer,AT Portal(dev),Filtering,1,,To Do,3 - Medium,3 - Medium,11.08.2023,11.08.2023,0
+-,8888,The uncorrect time is displayed during system notification creation,QA,AT Portal(dev),System Notifications,1,,To Do,3 - Medium,3 - Medium,15.08.2023,15.08.2023,0
+-,8889,The uncorrect time is displayed during system notification updating,QA,AT Portal(dev),System Notifications,1,,To Do,3 - Medium,3 - Medium,15.08.2023,15.08.2023,0
+-,8890,The 'Information' status of the System Notification created by default during System Notification creation,QA,AT Portal(dev),System Notifications,1,,To Do,3 - Medium,3 - Medium,15.08.2023,15.08.2023,0
+-,8896,"Double click on the Finish button during CSV, SCCM, Catalogue, UM import produce 2 imported applications with the same ID",QA,"AT Portal(prod), AT Portal(dev)",Import,1,,To Do,3 - Medium,3 - Medium,16.08.2023,16.08.2023,0
+237,8899,500 when trying to create FR with Previous version choosen,Developer,AT Portal(prod),Factory Requests,1,QA fault.,Closed,2 - High,2 - High,16.08.2023,17.08.2023,1
+237,8902,The Placeholders unavailable for the Document file name pattern Echo Settings,QA,"AT Portal(prod), AT Portal(dev)",Echo,1,,Closed,3 - Medium,3 - Medium,18.08.2023,23.08.2023,5
+-,8908,The parameters for Branding are not set after the packaging on the APE,QA,"AT Portal(prod), AT Portal(dev)",Branding,1,,To Do,3 - Medium,3 - Medium,18.08.2023,23.08.2023,5
+-,8909,The parameters for Active Setup are not set after the packaging on the APE,QA,"AT Portal(prod), AT Portal(dev)",Active Setup,1,,To Do,3 - Medium,3 - Medium,18.08.2023,23.08.2023,5
+-,8938,"The ""URI Too Long"" error occured while tracking all available Care apps on Updates page",QA,AT Portal(prod),Updates,1,,To Do,3 - Medium,3 - Medium,25.08.2023,25.08.2023,0
+238,8941,AT Portal. 500 Error while making a fast transition between steps,QA,AT Portal(dev),Workflow,1,,Closed,2 - High,1 - Critical,28.08.2023,06.09.2023,9
+-,8950,The AppID become +1 after Reverting app to Import - Initialize step using Timeline,QA,"AT Portal(prod), AT Portal(dev)",Timeline,1,,To Do,3 - Medium,3 - Medium,28.08.2023,28.08.2023,0
+-,8952,Error occured while reverting application to import - Confirm using Timeline page,QA,"AT Portal(prod), AT Portal(dev)",Timeline,1,,To Do,3 - Medium,3 - Medium,29.08.2023,29.08.2023,0
+-,8956,AT Portal. Intune button in non-current project is not displayed,QA,"AT Portal(prod), AT Portal(dev)",Menu,1,,To Do,2 - High,3 - Medium,29.08.2023,29.08.2023,0
+-,8970,"AT Portal API missing validation to ""Download attachment from request""",QA,AT Portal(dev),API,1,,To Do,3 - Medium,3 - Medium,30.08.2023,30.08.2023,0
+-,8984,OPS Complexity Matrix. 500 cycle-query error,QA,OPS(dev),Complexity Matrix,1,,To Do,3 - Medium,3 - Medium,04.09.2023,04.09.2023,0
+238,8985,AT Portal. 500 error while Care Intune push,QA,AT Portal(dev),Intune,1,QA fault.,Closed,3 - Medium,3 - Medium,04.09.2023,06.09.2023,2
+239,9012,Assignments does not work,Developer,AT Portal(prod),Assign,1,,Waiting for release,2 - High,1 - Critical,07.09.2023,07.09.2023,0
+239,9054,Care+. Automatic request feature doesn't work.,Customer(Internal),AT Portal(prod),Care+,1,Developer are not mentioned to test the Triggers functionality in the Timeline task. QA are not tested the triggers properly and not provided full regression testing of Care+ functionality during planned regression testing. ,Closed,1 - Critical,3 - Medium,13.09.2023,20.09.2023,7
+239,9058,Fix safebox,Developer,SafeBox,Safebox,1,The Safebox was unavailable.,Closed,2 - High,1 - Critical,14.09.2023,23.09.2023,9
+-,9061,Personal date (and time?) settings not respected by Updates and Timeline,Managment,SSO Passport(prod),Settings,2,,To Do,2 - High,3 - Medium,14.09.2023,14.09.2023,0
+239,9063,The Download step isn`t working if the Discovery FS has only .html uploaded file,QA,"AT Portal(prod), AT Portal(dev) ",Download,1,,To Do,3 - Medium,3 - Medium,15.09.2023,15.09.2023,0
+-,9071,AT Portal. Null Reference error while creating an empty dashboard,QA,AT Portal(dev),Dashboards,1,,To Do,3 - Medium,3 - Medium,18.09.2023,18.09.2023,0
+-,9075,Launcher: Infrastructure Script should be launched before other applications,Customer(Internal),AT portal(prod),Launcher,1,,To Do,3 - Medium,3 - Medium,19.09.2023,20.09.2023,1
+-,9080,"The ""End by"" calendar field on Time-based trigger doesn`t work properly with some of Date Formats",QA,"AT Portal(prod), AT Portal(dev) ",Care+,1,,To Do,3 - Medium,2 - High,20.09.2023,20.09.2023,0
+240,9091,Pending windows updates on PWC Germany image,Customer(Internal),OPS(prod),Virtualization,1,"not updated image, Windows updates weren`t disabled",Closed,1 - Critical,1 - Critical,25.09.2023,25.09.2023,0
+240,9093,Security issue - user can download any file from any project storage,Developer,AT Portal(prod),Storage,1,,Waiting for release,2 - High,1 - Critical,25.09.2023,25.09.2023,0
+240,9094,504 error during removing the file from the Storage,Customer(Internal),AT Portal(prod),Storage,1,Caused by code method,Ready for QA,3 - Medium,3 - Medium,26.09.2023,27.09.2023,1
+-,9095,The Active Setup Component Raw is not deleted from the Per User Data settings,QA,"AT Portal(prod), AT Portal(dev)",Project Settings,1,,To Do,3 - Medium,3 - Medium,26.09.2023,26.09.2023,0
