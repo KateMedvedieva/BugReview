@@ -16,8 +16,6 @@ $this->title = 'Dashboard';
 
 <div class="site-index">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <div class="body-content">
         <?php
         $form = ActiveForm::begin([
@@ -39,9 +37,15 @@ $this->title = 'Dashboard';
                 'options' => ['class' => 'form-control'],
             ]) ?>
             <?= Html::submitButton('Filter', ['class' => 'btn btn-primary', 'style' => 'margin-top: 32px'])?>
+            <?php ActiveForm::end() ?>
+
+            <?=Html::beginForm(Url::to(['site/index']), 'get');?>
+
+            <?= Html::submitButton('Clear', ['class' => 'btn btn-secondary ml-2', 'style' => 'margin-top: 32px'])?>
+
+            <?=Html::endForm();?>
         </div>
 
-        <?php ActiveForm::end() ?>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="dashboards-tab" data-bs-toggle="tab" data-bs-target="#dashboards" type="button" role="tab" aria-controls="dashboards" aria-selected="true">Dashboards</button>
@@ -80,7 +84,7 @@ $this->title = 'Dashboard';
                             }
 
                             $highImpactPercentage = ($highImpactBugsCount / $totalBugs) * 100;
-                                $analysisTextSeverity = "<h5>Аналіз помилок за серйозністю:</h5>";
+                            $analysisTextSeverity = "<h5>Аналіз помилок за серйозністю:</h5>";
 
                             foreach ($priorityData as $index => $count) {
                                 $label = $priorityLabels[$index];
@@ -199,8 +203,8 @@ $this->title = 'Dashboard';
                             ])
                             ?>
 
-                            </div>
                         </div>
+                    </div>
                     <div class="d-flex flex-column w-100 mr-5 h-200px">
                         <h5> Trends in Bug Discovery by Sprint  </h5>
 
@@ -462,39 +466,39 @@ $this->title = 'Dashboard';
                             $percentDev = 0.80;
                             $percentProd = 0.20;
 
-                                $expectedDevDefects = $totalDefects * $percentDev;
-                                $expectedProdDefects = $totalDefects * $percentProd;
+                            $expectedDevDefects = $totalDefects * $percentDev;
+                            $expectedProdDefects = $totalDefects * $percentProd;
 
-                                if ($devDefects > $expectedDevDefects) {
-                                    $recommendationsDensity .= "<p>Платформа <b>{$platform}</b> у dev середовищі має більшу, ніж очікувалося, кількість дефектів. Рекомендується провести ретельний аналіз причин дефектів та оптимізувати процеси розробки та тестування.</p>";
-                                }
+                            if ($devDefects > $expectedDevDefects) {
+                                $recommendationsDensity .= "<p>Платформа <b>{$platform}</b> у dev середовищі має більшу, ніж очікувалося, кількість дефектів. Рекомендується провести ретельний аналіз причин дефектів та оптимізувати процеси розробки та тестування.</p>";
+                            }
 
-                                if ($prodDefects > $expectedProdDefects) {
-                                    $recommendationsDensity .= "<p>Платформа <b>{$platform}</b> у prod середовищі має більшу, ніж очікувалося, кількість дефектів. Необхідно негайно вжити заходів для виправлення та запобігання виникненню критичних помилок.</p>";
-                                }
+                            if ($prodDefects > $expectedProdDefects) {
+                                $recommendationsDensity .= "<p>Платформа <b>{$platform}</b> у prod середовищі має більшу, ніж очікувалося, кількість дефектів. Необхідно негайно вжити заходів для виправлення та запобігання виникненню критичних помилок.</p>";
+                            }
                             ?>
 
                                 <!--                    --><?php //= print_r($defectDensityData) ?>
 
-                            <div class="d-flex flex-row">
-                                <div
+                        <div class="d-flex flex-row">
+                            <div
                                     class="d-flex flex-column justify-content-around"
                                     style="left: 22px; position: relative; z-index: 11"
-                                >
-                                    <div
+                            >
+                                <div
                                         style="background: #36A2EB; width: 70px; color: white; font-weight: 500;"
                                         class="h-50 p-2 d-flex justify-content-center align-items-center"
-                                    >
-                                        Dev
-                                    </div>
-                                    <div
+                                >
+                                    Dev
+                                </div>
+                                <div
                                         style="background: #FF6384; width: 70px; color: white; font-weight: 500;"
                                         class="h-50 p-2 d-flex justify-content-center align-items-center"
-                                    >
-                                        Prod
-                                    </div>
+                                >
+                                    Prod
                                 </div>
-                                <div style="width: calc(100% - 106px); position: relative; left: -12px; z-index: 10">
+                            </div>
+                            <div style="width: calc(100% - 106px); position: relative; left: -12px; z-index: 10">
                                 <?= ChartJs::widget([
                                     'type' => 'bar',
                                     'options' => [
@@ -502,7 +506,7 @@ $this->title = 'Dashboard';
                                         'height' => 200,
                                         'responsive' => true,
                                         'interaction' => [
-                                          'intersect' => false
+                                            'intersect' => false
                                         ],
                                         'scales' => [
                                             'xAxes' => [[
@@ -532,25 +536,25 @@ $this->title = 'Dashboard';
                                         ]
                                     ]
                                 ]) ?>
-                                </div>
-                                <div
+                            </div>
+                            <div
                                     class="d-flex flex-column justify-content-around"
                                     style="right: 14px; position: relative;"
+                            >
+                                <div
+                                        style="background: #36A2EB; width: 70px; color: white; font-weight: 500;"
+                                        class="h-50 p-2 d-flex justify-content-center align-items-center"
                                 >
-                                    <div
-                                            style="background: #36A2EB; width: 70px; color: white; font-weight: 500;"
-                                            class="h-50 p-2 d-flex justify-content-center align-items-center"
-                                    >
-                                        Dev
-                                    </div>
-                                    <div
-                                            style="background: #FF6384; width: 70px; color: white; font-weight: 500;"
-                                            class="h-50 p-2 d-flex justify-content-center align-items-center"
-                                    >
-                                        Prod
-                                    </div>
+                                    Dev
+                                </div>
+                                <div
+                                        style="background: #FF6384; width: 70px; color: white; font-weight: 500;"
+                                        class="h-50 p-2 d-flex justify-content-center align-items-center"
+                                >
+                                    Prod
                                 </div>
                             </div>
+                        </div>
 
                     </div>
                 <?php else: ?>
@@ -570,7 +574,7 @@ $this->title = 'Dashboard';
 
                             <tbody>
                             <?php
-                                foreach ($data['missedBugs'] as $metric) {
+                            foreach ($data['missedBugs'] as $metric) {
                                 echo "<tr>";
                                 echo "<td class='p-1'>" . $metric['sprint'] . "</td>";
                                 echo "<td class='p-1'>" . round($metric['metric']*100,2) . "%</td>";
@@ -713,3 +717,5 @@ $this->title = 'Dashboard';
             </div>
         </div>
     </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

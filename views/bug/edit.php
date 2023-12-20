@@ -21,7 +21,7 @@ use yii\helpers\Html;
 
 /** @var yii\web\View $this */
 
-$this->title = 'My Yii Application';
+$this->title = 'Edit page';
 ?>
 <div class="site-index">
 
