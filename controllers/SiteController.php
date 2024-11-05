@@ -12,7 +12,6 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\httpclient\Client;
-use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
@@ -66,9 +65,9 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = new Filter();
-        $filterDates = Yii::$app->request->get('Filter');
-        $startDate = $filterDates['startDate'];
-        $endDate = $filterDates['endDate'];
+        $filterDates = Yii::$app->request->get('Filter', []); // Додаємо дефолтне значення як пустий масив
+        $startDate = isset($filterDates['startDate']) ? $filterDates['startDate'] : null;
+        $endDate = isset($filterDates['endDate']) ? $filterDates['endDate'] : null;
 
         $query = Bugs::find();
 
@@ -80,6 +79,7 @@ class SiteController extends Controller
             $query->andWhere(['<=', 'createdDate', $endDate]);
             $model->endDate = $endDate;
         }
+
         $data = $query->all();
 
         $dataArray = array_map(function ($model) {
@@ -93,7 +93,7 @@ class SiteController extends Controller
         $client = new Client();
         $response = $client->createRequest()
             ->setMethod('POST')
-            ->setUrl('http://127.0.0.1:5000/process')
+            ->setUrl('http://172.19.0.2:5000/process')
             ->addHeaders(['content-type' => 'application/json'])
             ->setContent(json_encode($dataArray))
             ->send();
@@ -105,8 +105,9 @@ class SiteController extends Controller
                 'model' => $model
             ]);
         }
+
         return $this->render('index', [
-            'data' => Array(),
+            'data' => [],
             'model' => $model
         ]);
     }

@@ -25,7 +25,7 @@ class UploadForm extends Model
                 if (is_numeric($data[1])) {
                     $id = (int)$data[1];
                     $entity = Bugs::findOne(['id' => $id]);
-                    if ($entity || $entity['id']) {
+                    if ($entity || isset($entity['id'])) {
                         continue;
                     }
                     $sprint = $data[0] === '-' || $data[0] === '' ? NULL : (int)$data[0];
@@ -45,7 +45,6 @@ class UploadForm extends Model
                     $severity = $entity['id'];
                     $crDate = DateTime::createFromFormat('d-m-Y', implode('-', explode(".", $data[11])));
                     $createDate = $crDate->format('Y-m-d');
-                    echo($createDate);
                     $upDate = DateTime::createFromFormat('d-m-Y', implode('-', explode(".", $data[12])));
                     $changeDate = $upDate->format('Y-m-d');
                     $resolveTime = (int)$data[13];

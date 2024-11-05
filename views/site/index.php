@@ -36,33 +36,39 @@ $this->title = 'Dashboard';
                 'dateFormat' => 'yyyy-MM-dd',
                 'options' => ['class' => 'form-control'],
             ]) ?>
-            <?= Html::submitButton('Filter', ['class' => 'btn btn-primary', 'style' => 'margin-top: 32px'])?>
+            <?= Html::submitButton('Filter', ['class' => 'btn btn-primary', 'style' => 'margin-top: 32px']) ?>
             <?php ActiveForm::end() ?>
 
-            <?=Html::beginForm(Url::to(['site/index']), 'get');?>
+            <?= Html::beginForm(Url::to(['site/index']), 'get'); ?>
 
-            <?= Html::submitButton('Clear', ['class' => 'btn btn-secondary ml-2', 'style' => 'margin-top: 32px'])?>
+            <?= Html::submitButton('Clear', ['class' => 'btn btn-secondary ml-2', 'style' => 'margin-top: 32px']) ?>
 
-            <?=Html::endForm();?>
+            <?= Html::endForm(); ?>
         </div>
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="dashboards-tab" data-bs-toggle="tab" data-bs-target="#dashboards" type="button" role="tab" aria-controls="dashboards" aria-selected="true">Dashboards</button>
+                <button class="nav-link active" id="dashboards-tab" data-bs-toggle="tab" data-bs-target="#dashboards"
+                        type="button" role="tab" aria-controls="dashboards" aria-selected="true">Dashboards
+                </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="metrics-tab" data-bs-toggle="tab" data-bs-target="#metrics" type="button" role="tab" aria-controls="metrics" aria-selected="false">Metrics</button>
+                <button class="nav-link" id="metrics-tab" data-bs-toggle="tab" data-bs-target="#metrics" type="button"
+                        role="tab" aria-controls="metrics" aria-selected="false">Metrics
+                </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="conclusion-tab" data-bs-toggle="tab" data-bs-target="#conclusion" type="button" role="tab" aria-controls="conclusion" aria-selected="false">Conclusions</button>
+                <button class="nav-link" id="conclusion-tab" data-bs-toggle="tab" data-bs-target="#conclusion"
+                        type="button" role="tab" aria-controls="conclusion" aria-selected="false">Conclusions
+                </button>
             </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="dashboards" role="tabpanel" aria-labelledby="dashboards-tab">
-                <?php if($data): ?>
+                <?php if ($data): ?>
                     <div class="d-flex w-100">
                         <div class="d-flex flex-column w-100 mr-5">
-                            <h5> Distribution of Bugs by Severity  </h5>
+                            <h5> Distribution of Bugs by Severity </h5>
                             <?php
                             $priorityData = array_map(function ($item) {
                                 return $item['count'];
@@ -124,7 +130,7 @@ $this->title = 'Dashboard';
                         </div>
 
                         <div class="d-flex flex-column w-100">
-                            <h5> Distribution of Bugs by Priority  </h5>
+                            <h5> Distribution of Bugs by Priority </h5>
                             <?php
                             $priorityData = array_map(function ($item) {
                                 return $item['count'];
@@ -151,19 +157,20 @@ $this->title = 'Dashboard';
                                 }
                             }
 
-                            if ($priorityData[$priorityIndexes['1 - Critical']] > 0) {
-                                $analysisTextPriority .= "<p><b>Потребує негайного втручання:</b> Є " . $priorityData[$priorityIndexes['Critical']] . " критичних помилок, які потребують негайного вирішення.</p>";
+                            if (isset($priorityIndexes['1 - Critical']) && $priorityData[$priorityIndexes['1 - Critical']] > 0) {
+                                $analysisTextPriority .= "<p><b>Потребує негайного втручання:</b> Є " . $priorityData[$priorityIndexes['1 - Critical']] . " критичних помилок, які потребують негайного вирішення.</p>";
                             } else {
                                 $analysisTextPriority .= "<p><b>Всі критичні помилки під контролем:</b> Немає критичних помилок, що свідчить про стабільне становище продукту.</p>";
                             }
 
-                            if ($priorityData[$priorityIndexes['2 - High']] > 0) {
-                                $analysisTextPriority .= "<p><b>Проблеми високого пріоритету:</b> Є " . $priorityData[$priorityIndexes['High']] . " помилок високого пріоритету, які слід невідкладно вирішити, щоб уникнути значного впливу на якість продукту.</p>";
+                            if (isset($priorityIndexes['2 - High']) && $priorityData[$priorityIndexes['2 - High']] > 0) {
+                                $analysisTextPriority .= "<p><b>Проблеми високого пріоритету:</b> Є " . $priorityData[$priorityIndexes['2 - High']] . " помилок високого пріоритету, які слід невідкладно вирішити, щоб уникнути значного впливу на якість продукту.</p>";
                             }
 
                             $recommendationsPriority = "";
                             if ($totalBugs > 0) {
-                                if ($priorityData[$priorityIndexes['1 - Critical']] > 0 || $priorityData[$priorityIndexes['High']] > 0) {
+                                if ((isset($priorityIndexes['1 - Critical']) && $priorityData[$priorityIndexes['1 - Critical']]) > 0
+                                    || (isset($priorityIndexes['2 - High']) && $priorityData[$priorityIndexes['2 - High']] > 0)) {
                                     $recommendationsPriority .= "Потрібна негайна дія для усунення критичних та помилок високого пріоритету. ";
                                 }
                                 if ($priorityData[$priorityIndexes['3 - Medium']] > 0) {
@@ -206,7 +213,7 @@ $this->title = 'Dashboard';
                         </div>
                     </div>
                     <div class="d-flex flex-column w-100 mr-5 h-200px">
-                        <h5> Trends in Bug Discovery by Sprint  </h5>
+                        <h5> Trends in Bug Discovery by Sprint </h5>
 
                         <?php
                         $bySprintData = array_map(function ($item) {
@@ -222,16 +229,17 @@ $this->title = 'Dashboard';
 
                         $colors = array_slice(array_merge($colors, $colors), 0, count($bySprintData));
 
-                        function linearRegression($x, $y) {
+                        function linearRegression($x, $y)
+                        {
                             $n = count($x);
                             $x_sum = array_sum($x);
                             $y_sum = array_sum($y);
                             $xx_sum = 0;
                             $xy_sum = 0;
 
-                            for($i = 0; $i < $n; $i++){
-                                $xy_sum += ($x[$i]*$y[$i]);
-                                $xx_sum += ($x[$i]*$x[$i]);
+                            for ($i = 0; $i < $n; $i++) {
+                                $xy_sum += ($x[$i] * $y[$i]);
+                                $xx_sum += ($x[$i] * $x[$i]);
                             }
 
                             $slope = (($n * $xy_sum) - ($x_sum * $y_sum)) / (($n * $xx_sum) - ($x_sum * $x_sum));
@@ -260,7 +268,7 @@ $this->title = 'Dashboard';
                             $recommendationsTrend .= "<p>Перегляньте нещодавні зміни в кодовій базі та покращіть охоплення тестуванням. Розгляньте можливість переоцінки процесів розробки та контролю якості для виявлення потенційних прогалин.</p>";
                         } else {
                             $analysisSummary .= "<p>Лінія тренду вказує на стабільну або зменшуючу кількість помилок за спринтами. Це свідчить про те, що команда ефективно керує помилками та усуває їх по мірі виникнення.</p>";
-                            $recommendationsTrend  .= "<p>Продовжуйте використовувати поточні стратегії управління помилками та зосередьтеся на тих областях, де помилки все ще звітуються, для подальшого покращення якості.</p>";
+                            $recommendationsTrend .= "<p>Продовжуйте використовувати поточні стратегії управління помилками та зосередьтеся на тих областях, де помилки все ще звітуються, для подальшого покращення якості.</p>";
                         }
 
                         ?>
@@ -321,7 +329,7 @@ $this->title = 'Dashboard';
                     </div>
 
                     <div class="d-flex flex-column w-100 mr-5">
-                        <h5> Functionalities with Most bugs  </h5>
+                        <h5> Functionalities with Most bugs </h5>
                         <?php
                         $bySprintData = array_map(function ($item) {
                             return $item['count'];
@@ -412,7 +420,7 @@ $this->title = 'Dashboard';
                     </div>
 
                     <div class="d-flex flex-column w-100 mr-5">
-                        <h5> Defect Density  </h5
+                        <h5> Defect Density </h5
                             <?php
 
                             $dev = [];
@@ -423,7 +431,7 @@ $this->title = 'Dashboard';
                                 $prod[] = -$item['prod'];
                                 $defectDensityData[] = [
                                     'label' => $item['label'],
-                                    'data' => [$item['dev'], - $item['prod']],
+                                    'data' => [$item['dev'], -$item['prod']],
                                     'borderColor' => $colors[$i % count($colors)],
                                 ];
                             }
@@ -558,17 +566,17 @@ $this->title = 'Dashboard';
 
                     </div>
                 <?php else: ?>
-                    <div class="text m-5"> No data found </div>
+                    <div class="text m-5"> No data found</div>
                 <?php endif; ?>
             </div>
             <div class="tab-pane" id="metrics" role="tabpanel" aria-labelledby="metrics-tab">
-                <?php if($data): ?>
+                <?php if ($data): ?>
                     <div class="d-flex justify-content-between flex-row align-items-baseline mt-1" style="gap: 20px">
                         <table class="table" style="width: 30%">
                             <thead class="thead-dark">
                             <tr>
-                                <th> Sprint </th>
-                                <th> Missed bugs </th>
+                                <th> Sprint</th>
+                                <th> Missed bugs</th>
                             </tr>
                             </thead>
 
@@ -577,7 +585,7 @@ $this->title = 'Dashboard';
                             foreach ($data['missedBugs'] as $metric) {
                                 echo "<tr>";
                                 echo "<td class='p-1'>" . $metric['sprint'] . "</td>";
-                                echo "<td class='p-1'>" . round($metric['metric']*100,2) . "%</td>";
+                                echo "<td class='p-1'>" . round($metric['metric'] * 100, 2) . "%</td>";
                                 echo "</tr>";
 
                             }
@@ -588,24 +596,26 @@ $this->title = 'Dashboard';
                         <table class="table" style="width: 65%">
                             <thead class="thead-dark">
                             <tr>
-                                <th colspan="3" class="text-center"> Average spend time </th>
-                                <th colspan="3" class="text-center"> Trend </th>
+                                <th colspan="3" class="text-center"> Average spend time</th>
+                                <th colspan="3" class="text-center"> Trend</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <tr>
                                 <?php $status = $data['avgResolveTime']['common']['status'] ?>
-                                <td class='text-center' colspan="3"><?= $data['avgResolveTime']['common']['avgTime'] . ' days' ?></td>
-                                <td class='text-center' style="background: <?= $status == 1 ? 'green' : 'red' ?>" colspan="3"><?= $status == 1 ? 'Good' : 'Bad' ?></td>
+                                <td class='text-center'
+                                    colspan="3"><?= $data['avgResolveTime']['common']['avgTime'] . ' days' ?></td>
+                                <td class='text-center' style="background: <?= $status == 1 ? 'green' : 'red' ?>"
+                                    colspan="3"><?= $status == 1 ? 'Good' : 'Bad' ?></td>
                             </tr>
                             </tbody>
 
                             <thead class="thead-dark">
                             <tr>
-                                <th colspan="2"> Functionality </th>
-                                <th colspan="2" class="text-center"> Amount </th>
-                                <th colspan="2" class="text-center"> Trend </th>
+                                <th colspan="2"> Functionality</th>
+                                <th colspan="2" class="text-center"> Amount</th>
+                                <th colspan="2" class="text-center"> Trend</th>
                             </tr>
                             </thead>
 
@@ -618,8 +628,8 @@ $this->title = 'Dashboard';
 
                                 echo "<tr>";
                                 echo "<td colspan='2'>" . $functionalityEntity['name'] . "</td>";
-                                echo "<td colspan='2'>" . $d['avgTime'] . ' days'."</td>";
-                                echo "<td class='text-center' colspan='2' style='background: ".$status_color."' colspan='2'>";
+                                echo "<td colspan='2'>" . $d['avgTime'] . ' days' . "</td>";
+                                echo "<td class='text-center' colspan='2' style='background: " . $status_color . "' colspan='2'>";
                                 echo $status == 1 ? 'Good' : 'Bad';
                                 echo "</td>";
                                 echo "</tr>";
@@ -632,18 +642,18 @@ $this->title = 'Dashboard';
                     </div>
 
                 <?php else: ?>
-                    <div class="text m-5"> No data found </div>
+                    <div class="text m-5"> No data found</div>
                 <?php endif; ?>
             </div>
             <div class="tab-pane" id="conclusion" role="tabpanel" aria-labelledby="conclusion-tab">
-                <?php if($data): ?>
+                <?php if ($data): ?>
 
 
                     <div class="card text-bg-info mb-3">
                         <div class="card-header">Analysis of Bugs by Severity:</div>
                         <div class="card-body">
                             <p class="card-text">
-                                <?= $analysisTextSeverity;?>
+                                <?= $analysisTextSeverity; ?>
                         </div>
                     </div>
                     <div class="card text-bg-info mb-3">
@@ -652,7 +662,7 @@ $this->title = 'Dashboard';
                             <p class="card-text">
                                 <?= $analysisTextPriority;
                                 echo "<h5>Рекомендації:</h5>";
-                                echo "<p>$recommendationsPriority</p>";?>
+                                echo "<p>$recommendationsPriority</p>"; ?>
                         </div>
                     </div>
 
@@ -669,7 +679,7 @@ $this->title = 'Dashboard';
                         <div class="card-header">Functionalities with Most bugs :</div>
                         <div class="card-body">
                             <p class="card-text">
-                                <?=  $analysisTextFunctionality;
+                                <?= $analysisTextFunctionality;
                                 echo $recommendationsFunctionalities;
                                 ?>
                         </div>
@@ -678,7 +688,7 @@ $this->title = 'Dashboard';
                         <div class="card-header">Defect Density :</div>
                         <div class="card-body">
                             <p class="card-text">
-                                <?=  $analysisTextDensity;
+                                <?= $analysisTextDensity;
                                 echo $recommendationsDensity;
                                 ?>
                         </div>
@@ -701,21 +711,21 @@ $this->title = 'Dashboard';
                         <div class="card-header">Average lifetime of defects:</div>
                         <div class="card-body">
                             <?php
-                            $result = preg_replace_callback('/\$(\d+(\.\d+)?)\$/', function($matches) {
+                            $result = preg_replace_callback('/\$(\d+(\.\d+)?)\$/', function ($matches) {
                                 $id = $matches[1];
                                 $name = Functionality::findOne(['id' => $id])['name'];
-                                return "<b>".$name."</b>";
+                                return "<b>" . $name . "</b>";
                             }, $data['analysisConclusion']);
-                           echo $result ?>
+                            echo $result ?>
                         </div>
                     </div>
 
 
                 <?php else: ?>
-                    <div class="text m-5"> No data found </div>
+                    <div class="text m-5"> No data found</div>
                 <?php endif; ?>
             </div>
         </div>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

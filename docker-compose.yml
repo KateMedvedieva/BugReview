@@ -1,9 +1,40 @@
-version: '2'
 services:
   php:
     image: yiisoftware/yii2-php:7.4-apache
     volumes:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app:delegated
+      - .:/var/www/html
     ports:
       - '8000:80'
+
+    depends_on:
+    - mysql-db  # залежність від mysql-db сервісу
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # встановіть root пароль для MySQL
+      MYSQL_DATABASE: defects  # створіть базу даних `defects`
+      MYSQL_USER: yii
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3306:3306"  # порт MySQL
+    volumes:
+        - mysql_data:/var/lib/mysql  # зберігайте дані в об'ємі
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql-db
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - mysql-db
+
+volumes:
+  mysql_data:
