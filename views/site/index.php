@@ -90,18 +90,18 @@ $this->title = 'Dashboard';
                             }
 
                             $highImpactPercentage = ($highImpactBugsCount / $totalBugs) * 100;
-                            $analysisTextSeverity = "<h5>Аналіз помилок за серйозністю:</h5>";
+                            $analysisTextSeverity = "<h5>Bug Severity Analysis:</h5>";
 
                             foreach ($priorityData as $index => $count) {
                                 $label = $priorityLabels[$index];
                                 $percentage = ($count / $totalBugs) * 100;
-                                $analysisTextSeverity .= "<p>$label: $count помилок (" . round($percentage, 2) . "% від загальної кількості)</p>";
+                                $analysisTextSeverity .= "<p>$label: $count bugs (" . round($percentage, 2) . "% of total)</p>";
                             }
 
                             if ($highImpactPercentage > 20) {
-                                $analysisTextSeverity .= "<p><strong>Помилки з високим ступенем впливу:</strong> $highImpactBugsCount помилок (" . round($highImpactPercentage, 2) . "% від загальної кількості). Це критично та потребує негайного реагування.</p>";
+                                $analysisTextSeverity .= "<p><strong>High-impact bugs:</strong> $highImpactBugsCount bugs (" . round($highImpactPercentage, 2) . "% of total). This is critical and requires immediate attention.</p>";
                             } else {
-                                $analysisTextSeverity .= "<p><strong>Помилки з високим ступенем впливу:</strong> $highImpactBugsCount помилок (" . round($highImpactPercentage, 2) . "% від загальної кількості). Це в межах припустимого діапазону, але рекомендується моніторинг.</p>";
+                                $analysisTextSeverity .= "<p><strong>High-impact bugs:</strong> $highImpactBugsCount bugs (" . round($highImpactPercentage, 2) . "% of total). This is within acceptable range but should be monitored.</p>";
                             }
 
                             ?>
@@ -145,7 +145,7 @@ $this->title = 'Dashboard';
                             $colors = array_slice(array_merge($colors, $colors), 0, count($priorityData));
 
                             $totalBugs = array_sum($priorityData);
-                            $analysisTextPriority = "<h5>Аналіз помилок за пріоритетністю:</h5>";
+                            $analysisTextPriority = "<h5>Bug Priority Analysis:</h5>";
 
                             $priorityIndexes = array_flip($priorityLabels);
 
@@ -153,31 +153,31 @@ $this->title = 'Dashboard';
                                 if (array_key_exists($index, $priorityData)) {
                                     $count = $priorityData[$index];
                                     $percentage = ($count / $totalBugs) * 100;
-                                    $analysisTextPriority .= "<p><b>Пріоритет $priorityName:</b> $count помилок (" . round($percentage, 2) . "% від загальної кількості)</p>";
+                                    $analysisTextPriority .= "<p><b>Priority $priorityName:</b> $count bugs (" . round($percentage, 2) . "% of total)</p>";
                                 }
                             }
 
                             if (isset($priorityIndexes['1 - Critical']) && $priorityData[$priorityIndexes['1 - Critical']] > 0) {
-                                $analysisTextPriority .= "<p><b>Потребує негайного втручання:</b> Є " . $priorityData[$priorityIndexes['1 - Critical']] . " критичних помилок, які потребують негайного вирішення.</p>";
+                                $analysisTextPriority .= "<p><b>Requires immediate intervention:</b> There are " . $priorityData[$priorityIndexes['1 - Critical']] . " critical bugs that need immediate resolution.</p>";
                             } else {
-                                $analysisTextPriority .= "<p><b>Всі критичні помилки під контролем:</b> Немає критичних помилок, що свідчить про стабільне становище продукту.</p>";
+                                $analysisTextPriority .= "<p><b>All critical bugs under control:</b> No critical bugs present, indicating stable product status.</p>";
                             }
 
                             if (isset($priorityIndexes['2 - High']) && $priorityData[$priorityIndexes['2 - High']] > 0) {
-                                $analysisTextPriority .= "<p><b>Проблеми високого пріоритету:</b> Є " . $priorityData[$priorityIndexes['2 - High']] . " помилок високого пріоритету, які слід невідкладно вирішити, щоб уникнути значного впливу на якість продукту.</p>";
+                                $analysisTextPriority .= "<p><b>High-priority issues:</b> There are " . $priorityData[$priorityIndexes['2 - High']] . " high-priority bugs that should be addressed promptly to avoid significant impact on product quality.</p>";
                             }
 
                             $recommendationsPriority = "";
                             if ($totalBugs > 0) {
                                 if ((isset($priorityIndexes['1 - Critical']) && $priorityData[$priorityIndexes['1 - Critical']]) > 0
                                     || (isset($priorityIndexes['2 - High']) && $priorityData[$priorityIndexes['2 - High']] > 0)) {
-                                    $recommendationsPriority .= "Потрібна негайна дія для усунення критичних та помилок високого пріоритету. ";
+                                    $recommendationsPriority .= "Immediate action required to address critical and high-priority bugs. ";
                                 }
                                 if ($priorityData[$priorityIndexes['3 - Medium']] > 0) {
-                                    $recommendationsPriority .= "Помилки середнього пріоритету слід запланувати до усунення у відповідності з графіком проекту. ";
+                                    $recommendationsPriority .= "Medium-priority bugs should be scheduled for resolution according to the project timeline. ";
                                 }
                             } else {
-                                $recommendationsPriority .= "Помилок немає - чудова робота з підтримки якості!";
+                                $recommendationsPriority .= "No bugs present - excellent quality maintenance!";
                             }
 
                             ?>
@@ -260,15 +260,15 @@ $this->title = 'Dashboard';
                             $increase = true;
                         }
 
-                        $analysisSummary = "<h5>Підсумки аналізу тенденцій:</h5>";
-                        $recommendationsTrend = "<h5>Рекомендації:</h5>";
+                        $analysisSummary = "<h5>Trend Analysis Summary:</h5>";
+                        $recommendationsTrend = "<h5>Recommendations:</h5>";
 
                         if ($increase) {
-                            $analysisSummary .= "<p>Лінія тренду вказує на збільшення кількості помилок за спринтами. Це може свідчити про те, що нові функції або зміни в коді вводять помилки.</p>";
-                            $recommendationsTrend .= "<p>Перегляньте нещодавні зміни в кодовій базі та покращіть охоплення тестуванням. Розгляньте можливість переоцінки процесів розробки та контролю якості для виявлення потенційних прогалин.</p>";
+                            $analysisSummary .= "<p>The trend line indicates an increase in bug count across sprints. This may suggest that new features or code changes are introducing bugs.</p>";
+                            $recommendationsTrend .= "<p>Review recent codebase changes and improve test coverage. Consider re-evaluating development and quality control processes to identify potential gaps.</p>";
                         } else {
-                            $analysisSummary .= "<p>Лінія тренду вказує на стабільну або зменшуючу кількість помилок за спринтами. Це свідчить про те, що команда ефективно керує помилками та усуває їх по мірі виникнення.</p>";
-                            $recommendationsTrend .= "<p>Продовжуйте використовувати поточні стратегії управління помилками та зосередьтеся на тих областях, де помилки все ще звітуються, для подальшого покращення якості.</p>";
+                            $analysisSummary .= "<p>The trend line shows stable or decreasing bug counts across sprints. This indicates that the team is effectively managing and resolving bugs as they arise.</p>";
+                            $recommendationsTrend .= "<p>Continue using current bug management strategies and focus on areas where bugs are still being reported for further quality improvement.</p>";
                         }
 
                         ?>
@@ -359,8 +359,8 @@ $this->title = 'Dashboard';
                         ];
 
                         $colors = array_slice(array_merge($colors, $colors), 0, count($bySprintData));
-                        $analysisTextFunctionality = "<h5>Аналіз топ-5 функціональностей за кількістю помилок:</h5>";
-                        $recommendationsFunctionalities = "<h5>Рекомендації:</h5>";
+                        $analysisTextFunctionality = "<h5>Top 5 Functionalities by Bug Count:</h5>";
+                        $recommendationsFunctionalities = "<h5>Recommendations:</h5>";
 
 
                         $urgentThreshold = 20;
@@ -373,28 +373,22 @@ $this->title = 'Dashboard';
                         foreach ($topFunctionalities as $functionality) {
                             $funcName = \app\models\Functionality::findOne(['id' => $functionality['functionalityID']])['name'];
                             $bugsCount = $functionality['count'];
-
-                            if ($bugsCount >= $urgentThreshold) {
-                                $urgentFixes[] = $funcName;
-                            } elseif ($bugsCount >= $attentionThreshold) {
-                                $needsAttention[] = $funcName;
-                            }
                             $percentageOfTotal = ($bugsCount / $totalBugs) * 100;
-                            $analysisTextFunctionality .= "<p><b>{$funcName}:</b> {$bugsCount} помилок, що становить " . round($percentageOfTotal, 2) . "% від загальної кількості.</p>";
+                            $analysisTextFunctionality .= "<p><b>{$funcName}:</b> {$bugsCount} bugs, representing " . round($percentageOfTotal, 2) . "% of total.</p>";
                         }
 
                         if (!empty($urgentFixes)) {
                             $funcNames = implode(', ', $urgentFixes);
-                            $recommendationsFunctionalities .= "<p>Функціональність {$funcNames} має значну кількість помилок, що вимагає негайного аналізу та вирішення.</p>";
+                            $recommendationsFunctionalities .= "<p>The functionality {$funcNames} has a significant number of bugs requiring immediate analysis and resolution.</p>";
                         }
 
                         if (!empty($needsAttention)) {
                             $funcNames = implode(', ', $needsAttention);
-                            $recommendationsFunctionalities .= "<p>Функціональність {$funcNames} містить помітну кількість помилок і потребує уваги для покращення.</p>";
+                            $recommendationsFunctionalities .= "<p>The functionality {$funcNames} contains a notable number of bugs and requires attention for improvement.</p>";
                         }
 
                         if (empty($urgentFixes) && empty($needsAttention)) {
-                            $recommendationsFunctionalities .= "<p>Всі функціональності знаходяться в задовільному стані. Продовжуйте моніторинг та уважно ставтеся до нових помилок.</p>";
+                            $recommendationsFunctionalities .= "<p>All functionalities are in satisfactory condition. Continue monitoring and stay vigilant for new bugs.</p>";
                         }
 
                         ?>
@@ -449,7 +443,7 @@ $this->title = 'Dashboard';
                                 $defectDensityData[$key]['backgroundColor'] = $colors;
                             }
 
-                            $analysisTextDensity = "<h5>Аналіз щільності дефектів за платформами та середовищами:</h5>";
+                            $analysisTextDensity = "<h5>Defect Density Analysis by Platform and Environment:</h5>";
 
                             $devDefectsByPlatform = [];
                             $prodDefectsByPlatform = [];
@@ -461,15 +455,15 @@ $this->title = 'Dashboard';
                                 $devDefects = $d['data'][0];
                                 $totalDefects = $devDefects + $prodDefects;
 
-                                $analysisTextDensity .= "<p>Платформа <b>{$platform}</b>:</p>";
+                                $analysisTextDensity .= "<p>Platform <b>{$platform}</b>:</p>";
                                 $analysisTextDensity .= "<ul>";
-                                $analysisTextDensity .= "<li>Dev середовище: {$devDefects} дефектів.</li>";
-                                $analysisTextDensity .= "<li>Prod середовище: {$prodDefects} дефектів.</li>";
-                                $analysisTextDensity .= "<li>Загальна кількість дефектів: " . ($devDefects + $prodDefects) . ".</li>";
+                                $analysisTextDensity .= "<li>Dev environment: {$devDefects} defects</li>";
+                                $analysisTextDensity .= "<li>Prod environment: {$prodDefects} defects</li>";
+                                $analysisTextDensity .= "<li>Total defects: " . ($devDefects + $prodDefects) . "</li>";
                                 $analysisTextDensity .= "</ul>";
                             }
 
-                            $recommendationsDensity = "<h5>Рекомендації:</h5>";
+                            $recommendationsDensity = "<h5>Recommendations:</h5>";
 
                             $percentDev = 0.80;
                             $percentProd = 0.20;
@@ -477,14 +471,15 @@ $this->title = 'Dashboard';
                             $expectedDevDefects = $totalDefects * $percentDev;
                             $expectedProdDefects = $totalDefects * $percentProd;
 
-                            if ($devDefects > $expectedDevDefects) {
-                                $recommendationsDensity .= "<p>Платформа <b>{$platform}</b> у dev середовищі має більшу, ніж очікувалося, кількість дефектів. Рекомендується провести ретельний аналіз причин дефектів та оптимізувати процеси розробки та тестування.</p>";
-                            }
+                           if ($devDefects > $expectedDevDefects) {
+                               $recommendationsDensity .= "<p>Platform <b>{$platform}</b> in dev environment has more defects than expected. It is recommended to conduct a thorough analysis of defect causes and optimize development and testing processes.</p>";
+                           }
 
-                            if ($prodDefects > $expectedProdDefects) {
-                                $recommendationsDensity .= "<p>Платформа <b>{$platform}</b> у prod середовищі має більшу, ніж очікувалося, кількість дефектів. Необхідно негайно вжити заходів для виправлення та запобігання виникненню критичних помилок.</p>";
-                            }
-                            ?>
+                           if ($prodDefects > $expectedProdDefects) {
+                                $recommendationsDensity .= "<p>Platform <b>{$platform}</b> in prod environment has more defects than expected. Immediate action is required to fix and prevent critical errors.</p>";
+                           }
+
+                           ?>
 
                                 <!--                    --><?php //= print_r($defectDensityData) ?>
 
@@ -661,7 +656,7 @@ $this->title = 'Dashboard';
                         <div class="card-body">
                             <p class="card-text">
                                 <?= $analysisTextPriority;
-                                echo "<h5>Рекомендації:</h5>";
+                                echo "<h5>Recommendations:</h5>";
                                 echo "<p>$recommendationsPriority</p>"; ?>
                         </div>
                     </div>
