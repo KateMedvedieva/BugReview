@@ -65,7 +65,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = new Filter();
-        $filterDates = Yii::$app->request->get('Filter', []); // Додаємо дефолтне значення як пустий масив
+        $filterDates = Yii::$app->request->get('Filter', []);
         $startDate = isset($filterDates['startDate']) ? $filterDates['startDate'] : null;
         $endDate = isset($filterDates['endDate']) ? $filterDates['endDate'] : null;
 

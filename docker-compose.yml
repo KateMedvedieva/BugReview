@@ -36,5 +36,16 @@ services:
     depends_on:
       - mysql-db
 
+  analysing-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8001:5000"
+    environment:
+      - FLASK_ENV=development
+
 volumes:
   mysql_data:

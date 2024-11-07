@@ -5,7 +5,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 import numpy as np
 import json
-import re
 
 app = Flask(__name__)
 
@@ -21,51 +20,52 @@ def unprocessed_defects(df):
     unprocessed_defects_metric_corrected = num_defects_to_do / total_defects if total_defects > 0 else 0
 
     def analyze_unprocessed_defects(num_defects_to_do, total_defects):
-        if total_defects > 0:
-            metric = num_defects_to_do / total_defects
-            analysis_text = f"The 'Unprocessed Defects' metric is {metric:.2f} or {metric * 100:.1f}%. <br />"
-            if metric > 0.20:
-                analysis_text += "This exceeds the 20% threshold, which may indicate team problems with understanding what constitutes a defect, or with prioritizing product bug fixes.<br />"
+            if total_defects > 0:
+                metric = num_defects_to_do / total_defects
+                analysis_text = f"The 'Unprocessed Defects' metric is {metric:.2f} or {metric * 100:.1f}%. <br />"
+                if metric > 0.20:
+                    analysis_text += "This exceeds the 20% threshold, which may indicate team issues with understanding what constitutes a defect, or with prioritizing product bug fixes.<br />"
+                else:
+                    analysis_text += "This is below the 20% threshold, indicating adequate defect management in the team.<br />"
             else:
-                analysis_text += "This is below the 20% threshold, indicating adequate defect management in the team.<br />"
-        else:
-            analysis_text = "The total number of registered defects is 0, so the metric calculation is not possible.<br />"
+                analysis_text = "The total number of registered defects is 0, therefore the metric calculation is not possible.<br />"
 
-        return analysis_text
+            return analysis_text
 
     analysis_result = analyze_unprocessed_defects(num_defects_to_do, total_defects)
     return analysis_result
 
 
-import pandas as pd
-
-import pandas as pd
-
 def missed_bugs_prod_func(df):
-
-    sprints = sorted(df['sprint'].dropna().unique())
+    sprints = df['sprint'].dropna().unique()
 
     df['createdDate'] = pd.to_datetime(df['createdDate'])
-
     missed_defects_metrics_updated = {}
+    start_date = pd.Timestamp('2023-01-04')
 
-    for i, sprint in enumerate(sprints):
+    def calculate_sprint_end_date(start_date):
+        return start_date + pd.Timedelta(weeks=2)
 
-        sprint_data = df[df['sprint'] == sprint]
+    def calculate_missed_defects_for_sprint(sprint_data, sprint_end_date):
+        bugs_after_sprint_prod = sprint_data[
+            (sprint_data['createdDate'] > sprint_end_date) & (sprint_data['Platform'].str.contains('prod'))]
+
         total_bugs_sprint = sprint_data.shape[0]
 
-        if total_bugs_sprint == 0:
-            missed_defects_metrics_updated[sprint] = 0
-            continue
+        if total_bugs_sprint > 0:
+            missed_defects = bugs_after_sprint_prod.shape[0] / total_bugs_sprint
+        else:
+            missed_defects = None
 
-        bugs_after_sprint_prod = df[
-            (df['sprint'] > sprint) &
-            (df['Platform'].str.contains('prod'))
-        ]
+        return missed_defects
 
-        missed_defects = bugs_after_sprint_prod.shape[0] / total_bugs_sprint
+    for sprint in sprints:
+        sprint_data = df[df['sprint'] == sprint]
 
-        missed_defects_metrics_updated[sprint] = missed_defects
+        end_date = calculate_sprint_end_date(start_date)
+        missed_defects_metrics_updated[sprint] = calculate_missed_defects_for_sprint(sprint_data, end_date)
+
+        start_date = end_date
 
     missed_defects_df = pd.DataFrame(list(missed_defects_metrics_updated.items()),
                                      columns=['sprint', 'metric'])
@@ -74,16 +74,15 @@ def missed_bugs_prod_func(df):
 
     return missed_defects_df
 
+
+
 def generate_missed_bugs_conclusion(missed_defects_df):
     missed_defects_df['sprint'] = missed_defects_df['sprint'].astype(int)
-
     no_missed_bugs_sprints = missed_defects_df[missed_defects_df['metric'] == 0]['sprint'].tolist()
 
     average_metric = missed_defects_df['metric'].mean()
     max_missed_bugs = missed_defects_df['metric'].max()
-
-    sprint_with_max_missed_bugs = missed_defects_df[
-        missed_defects_df['metric'] == max_missed_bugs]['sprint'].iloc[0]
+    sprint_with_max_missed_bugs = missed_defects_df[missed_defects_df['metric'] == max_missed_bugs]['sprint'].iloc[0]
 
     if average_metric < 0.1:
         conclusion = "The average percentage of missed defects is below 10%, indicating an effective testing process.<br />"
@@ -95,15 +94,14 @@ def generate_missed_bugs_conclusion(missed_defects_df):
         conclusion += f"Sprints with no missed defects in production: {sprints_str}. The testing process during these sprints was conducted correctly.<br />"
 
     if max_missed_bugs > 0.1:
-        conclusion += f"Warning! The highest number of missed defects ({max_missed_bugs*100:.2f}%) was observed in sprint {sprint_with_max_missed_bugs}. Special attention to this sprint is recommended.<br />"
+        conclusion += f"Attention! The highest number of missed defects ({max_missed_bugs*100:.2f})% was observed in sprint {sprint_with_max_missed_bugs}. It is recommended to pay special attention to this sprint.<br />"
     else:
         conclusion += f"The highest number of missed defects in sprint {sprint_with_max_missed_bugs} does not exceed 0.1, which is acceptable.<br />"
 
     return conclusion
 
 
-
-def average_time_to_solve_func(df):
+def average_time_to_solve_func(df, filter_conditions=None):
     total_time_to_solve = df['timeForSolve'].sum()
     total_defects_count = df.shape[0]
 
