@@ -68,7 +68,7 @@ $this->title = 'Dashboard';
                 <?php if ($data): ?>
                     <div class="d-flex w-100">
                         <div class="d-flex flex-column w-100 mr-5">
-                            <h5> Distribution of Bugs by Severity </h5>
+                            <h5> Distribution of Bugs by Severity Test </h5>
                             <?php
                             $priorityData = array_map(function ($item) {
                                 return $item['count'];

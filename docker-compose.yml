@@ -9,20 +9,20 @@ services:
       - '8000:80'
 
     depends_on:
-    - mysql-db  # залежність від mysql-db сервісу
+    - mysql-db
 
   mysql-db:
     image: mysql:8.0
     container_name: mysql-db
     environment:
-      MYSQL_ROOT_PASSWORD: root  # встановіть root пароль для MySQL
-      MYSQL_DATABASE: defects  # створіть базу даних `defects`
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: defects
       MYSQL_USER: yii
       MYSQL_PASSWORD: 1234
     ports:
-      - "3306:3306"  # порт MySQL
+      - "3306:3306"
     volumes:
-        - mysql_data:/var/lib/mysql  # зберігайте дані в об'ємі
+        - mysql_data:/var/lib/mysql
 
 
   phpmyadmin:
